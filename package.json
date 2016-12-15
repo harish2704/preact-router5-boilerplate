@@ -6,11 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --port 8002 --hot --inline",
-    "build": "env NODE_ENV=production webpack"
+    "build": "env NODE_ENV=production webpack",
+    "lint": "eslint --ext js --ext jsx core components || exit 0"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-plugin-react": "^6.8.0",
     "node-sass": "^3.13.1",
     "sass-loader": "^4.0.2",
     "webpack": "^1.14.0",
