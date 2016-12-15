@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-export default class UserList{
+export default class UserList extends Component {
 
   render(){
     return (

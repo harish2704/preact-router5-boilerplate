@@ -15,13 +15,13 @@ var config = {
   entry: "./core/entry.js",
   output: {
     path: __dirname + '/build',
-    publicPath: '/build',
+    publicPath: '/build/',
     filename: "bundle.js"
   },
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.(jsx|js)$/,
         loader: 'babel',
       },
       {
@@ -45,7 +45,7 @@ var config = {
     alias: {
       'react': 'preact-compat',
       'react-dom': 'preact-compat'
-    },
+    }, 
     extensions: ['', '.js', '.jsx']
   }
 };

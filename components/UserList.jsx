@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router5';
 
 function createUser( arr ){
@@ -24,7 +24,7 @@ function getRow( user ){
   );
 }
 
-export default class UserList{
+export default class UserList extends Component {
 
   render(){
     return (
