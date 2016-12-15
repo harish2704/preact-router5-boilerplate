@@ -9,7 +9,7 @@
     "build": "env NODE_ENV=production webpack"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "node-sass": "^3.13.1",
     "sass-loader": "^4.0.2",
