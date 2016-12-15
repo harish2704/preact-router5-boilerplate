@@ -1,0 +1,23 @@
+
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+$brand-danger                     : #FF0000;
+$brand-success                    : #0BE000;
+$brand-primary                    : #2200FF;
+$navbar-height                    : 70px;
+$navbar-default-bg                : #FF5500;
+$navbar-default-link-color        : #FFF;
+$navbar-default-link-active-color : #FFF;
+
+
+$border-radius-base:        15px !default;
+$border-radius-large:       20px !default;
+$border-radius-small:       10px !default;
+
+#container {
+    margin-top: 70px;
+}
+
+
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
