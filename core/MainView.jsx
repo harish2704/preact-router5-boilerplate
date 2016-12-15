@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import { createElement } from 'react';
 import { routeNode } from 'react-router5';
 
 import About from '../components/About';

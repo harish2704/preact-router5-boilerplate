@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-export default class Nav extends Component{
+export default class Nav extends Component {
 
-  render(){
+  render() {
     return (
       <div className="container">
         <div className="navbar-header">
@@ -35,7 +35,7 @@ export default class Nav extends Component{
           </ul>
         </div>
       </div>
-    );
+    )
   }
 }
 

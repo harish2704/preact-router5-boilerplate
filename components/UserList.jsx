@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router5';
 
 function createUser( arr ){
@@ -15,7 +15,7 @@ const users = [
 
 function getRow( user ){
   return(
-    <div class="row">
+    <div className="row">
       <Link routeName="usersView" routeParams={{id: user.id}} routeOptions={{reload: true}}>
         <b>{user.id}</b>:
         <i>{user.name}</i>

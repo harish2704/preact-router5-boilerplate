@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Nav from '../components/Nav';
 import MainView from './MainView';
 
-import Router5, { createRouter, RouteNode, errorCodes, transitionPath, loggerPlugin } from 'router5';
+import { createRouter, loggerPlugin } from 'router5';
 import browserPlugin from 'router5/plugins/browser';
 import listenersPlugin from 'router5/plugins/listeners';
 import { RouterProvider } from 'react-router5';
