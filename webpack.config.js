@@ -47,6 +47,12 @@ var config = {
       'react-dom': 'preact-compat'
     }, 
     extensions: ['', '.js', '.jsx']
+  },
+  devServer: {
+    port: 8002,
+    historyApiFallback: {
+      index: 'core/test.html'
+    }
   }
 };
 

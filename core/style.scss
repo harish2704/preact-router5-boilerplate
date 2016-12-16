@@ -11,9 +11,11 @@ $navbar-default-link-color        : #FFF;
 $navbar-default-link-active-color : #FFF;
 
 
-$border-radius-base:        15px !default;
-$border-radius-large:       20px !default;
-$border-radius-small:       10px !default;
+$border-radius-large:       25px !default;
+$border-radius-base:        18px !default;
+$border-radius-small:       15px !default;
+$btn-border-radius-xs:      10px !default;
+
 
 #container {
     margin-top: 70px;
@@ -21,3 +23,8 @@ $border-radius-small:       10px !default;
 
 
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+
+.btn-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-xs );
+}
+
