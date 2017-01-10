@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('style.css');
 var isProduction = process.env.NODE_ENV === 'production';
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var path = require('path');
 
 function getCssLoader( loader ){
   if( isProduction ){
@@ -12,7 +14,9 @@ function getCssLoader( loader ){
 }
 
 var config = {
-  entry: "./core/entry.js",
+  entry: [
+    './core/entry.js'
+  ],
   output: {
     path: __dirname + '/build',
     publicPath: '/build/',
@@ -21,8 +25,16 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.(jsx|js)$/,
-        loader: 'babel',
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: function( args ){
+          return args.match(/node_modules/) && ( !args.match(/(preact|react-monaco-editor)/) );
+        },
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -39,15 +51,24 @@ var config = {
     ],
   },
   plugins:[
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'node_modules/monaco-editor/min/vs',
+        to: 'vs',
+      }
+    ])
   ],
   resolve: {
     alias: {
       'react': 'preact-compat',
-      'react-dom': 'preact-compat'
-    }, 
-    extensions: ['', '.js', '.jsx']
+      'react-dom': 'preact-compat',
+      'preact': path.resolve('./preact'),
+      'react-monaco-editor': path.resolve('./react-monaco-editor')
+    },
+    extensions: ['', '.js', '.ts', '.tsx' ]
   },
+  devtool: 'source-map',
   devServer: {
     port: 8002,
     historyApiFallback: {
@@ -66,7 +87,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
 
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
+      sourceMap: true,
       output: {
         comments: false,
       },
@@ -76,6 +97,8 @@ if (process.env.NODE_ENV === 'production') {
       },
     })
   ]);
+} else {
+  config.entry.push('preact/devtools');
 }
 
 module.exports = config;

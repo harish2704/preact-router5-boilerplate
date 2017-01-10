@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router5';
+import { Component, createElement } from 'react';
+const { Link } =  require('react-router5');
 
 function createUser( arr ){
   return { id: arr[0], name: arr[1] };
@@ -24,7 +24,7 @@ function getRow( user ){
   );
 }
 
-export default class UserList extends Component {
+export default class UserList extends Component<{},{}> {
 
   render(){
     return (

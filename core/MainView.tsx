@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { routeNode } from 'react-router5';
+const { routeNode } = require('react-router5');
 
 import About from '../components/About';
 import Contact from '../components/Contact';

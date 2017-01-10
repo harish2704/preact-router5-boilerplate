@@ -5,4 +5,5 @@
 
 require('./style.scss');
 
-require('./App.jsx');
+require('./App');
+require('d3');

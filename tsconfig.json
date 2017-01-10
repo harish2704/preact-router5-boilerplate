@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "jsxFactory": "createElement",
+        "outDir": "dist",
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true
+    },
+    "include": [
+        "components",
+        "core"
+    ],
+    "exclude": [
+        "node_modules/*"
+    ]
+}

@@ -6,17 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline",
-    "build": "env NODE_ENV=production webpack",
+    "build": "env NODE_ENV=production webpack --progress",
     "lint": "eslint --ext js --ext jsx core components || exit 0"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^0.14.55",
+    "awesome-typescript-loader": "^3.0.0-beta.17",
     "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "copy-webpack-plugin": "^4.0.1",
     "eslint": "^3.12.2",
     "eslint-plugin-react": "^6.8.0",
     "node-sass": "^3.13.1",
     "sass-loader": "^4.0.2",
+    "source-map-loader": "^0.1.5",
+    "typedoc": "^0.5.3",
+    "typescript": "^2.1.4",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
@@ -33,6 +40,9 @@
     "preact": "^7.1.0",
     "preact-compat": "^3.9.4",
     "raw-loader": "^0.5.1",
+    "react": "^15.4.1",
+    "react-monaco-editor": "https://github.com/harish2704/react-monaco-editor/archive/67fb8f04fbcd2d3e12fd76fba32a001e67468734.tar.gz",
+    "react-resolver": "^3.1.0",
     "react-router5": "^4.0.1",
     "router5": "^4.3.4",
     "style-loader": "^0.13.1"
