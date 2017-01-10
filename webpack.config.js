@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('style.css');
 var isProduction = process.env.NODE_ENV === 'production';
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 
 function getCssLoader( loader ){
@@ -31,9 +30,7 @@ var config = {
       },
       {
         test: /\.jsx?$/,
-        exclude: function( args ){
-          return args.match(/node_modules/) && ( !args.match(/(preact|react-monaco-editor)/) );
-        },
+        exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
@@ -52,19 +49,12 @@ var config = {
   },
   plugins:[
     new webpack.optimize.OccurenceOrderPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: 'node_modules/monaco-editor/min/vs',
-        to: 'vs',
-      }
-    ])
   ],
   resolve: {
     alias: {
       'react': 'preact-compat',
       'react-dom': 'preact-compat',
-      'preact': path.resolve('./preact'),
-      'react-monaco-editor': path.resolve('./react-monaco-editor')
+      // 'preact': path.resolve('./preact'),
     },
     extensions: ['', '.js', '.ts', '.tsx' ]
   },

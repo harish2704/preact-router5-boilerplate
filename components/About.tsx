@@ -1,5 +1,4 @@
 import { Component, createElement } from 'react';
-import MonacoEditor from 'react-monaco-editor';
 
 const langs = [
 	'javascript',
@@ -95,15 +94,6 @@ export default class About extends Component<any, any> {
           <pre>{this.state.code}</pre>
         </div>
         <div className="col-xs-8">
-          <MonacoEditor
-            width="800"
-            height="600"
-            language={this.state.ft}
-            onchange={this.bindTo('code')}
-            value={code}
-            options={options}
-            requireConfig={requireConfig}
-          />
         </div>
       </div>
       );
